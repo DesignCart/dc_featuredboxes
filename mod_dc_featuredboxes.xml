@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>MOD_DC_FEATUREDBOXES</name>
+	<creationDate>2026-03</creationDate>
+	<author>Design Cart</author>
+	<copyright>Copyright (C) 2026. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>MOD_DC_FEATUREDBOXES_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_dc_featuredboxes">mod_dc_featuredboxes.php</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<folder>media</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_dc_featuredboxes.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_dc_featuredboxes.sys.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.mod_dc_featuredboxes.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.mod_dc_featuredboxes.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="featuredboxes" label="MOD_DC_FEATUREDBOXES_TAB_FEATUREDBOXES">
+				<field
+					name="boxes"
+					type="subform"
+					label="MOD_DC_FEATUREDBOXES_FIELD_BOXES_LABEL"
+					multiple="true"
+					layout="joomla.form.field.subform.repeatable-table"
+					buttons="add,remove,move"
+					>
+					<form>
+						<field name="title" type="text" label="MOD_DC_FEATUREDBOXES_FIELD_TITLE_LABEL" filter="string" />
+						<field name="text" type="textarea" label="MOD_DC_FEATUREDBOXES_FIELD_TEXT_LABEL" filter="safehtml" rows="4" />
+						<field name="button_text" type="text" label="MOD_DC_FEATUREDBOXES_FIELD_BUTTON_TEXT_LABEL" filter="string" />
+						<field name="button_link" type="url" label="MOD_DC_FEATUREDBOXES_FIELD_BUTTON_LINK_LABEL" filter="url" />
+						<field name="image" type="media" label="MOD_DC_FEATUREDBOXES_FIELD_IMAGE_LABEL" />
+					</form>
+				</field>
+			</fieldset>
+
+			<fieldset name="design" label="MOD_DC_FEATUREDBOXES_TAB_DESIGN">
+				<!-- 1 Ogólne -->
+				<field type="spacer" label="MOD_DC_FEATUREDBOXES_GROUP_GENERAL" />
+				<field
+					name="every_second_lower"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_EVERY_SECOND_LOWER_LABEL"
+					description="MOD_DC_FEATUREDBOXES_FIELD_EVERY_SECOND_LOWER_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="columns" type="list" label="MOD_DC_FEATUREDBOXES_FIELD_COLUMNS_LABEL" default="4" validate="options" filter="integer">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</field>
+
+				<!-- 2 Obraz -->
+				<field type="spacer" label="MOD_DC_FEATUREDBOXES_GROUP_IMAGE" />
+				<field
+					name="show_image"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_SHOW_IMAGE_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="image_max_width" type="number" label="MOD_DC_FEATUREDBOXES_FIELD_IMAGE_MAX_WIDTH_LABEL" default="100" filter="integer" min="10" max="100" />
+				<field
+					name="image_border"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_IMAGE_BORDER_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="image_border_width" type="number" label="MOD_DC_FEATUREDBOXES_FIELD_IMAGE_BORDER_WIDTH_LABEL" default="2" filter="integer" min="1" max="20" showon="image_border:1" />
+				<field name="image_border_color" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_IMAGE_BORDER_COLOR_LABEL" default="#ffffff" showon="image_border:1" />
+				<field
+					name="image_linked"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_IMAGE_LINKED_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="image_in_content"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_IMAGE_IN_CONTENT_LABEL"
+					description="MOD_DC_FEATUREDBOXES_FIELD_IMAGE_IN_CONTENT_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- 3 Content -->
+				<field type="spacer" label="MOD_DC_FEATUREDBOXES_GROUP_CONTENT" />
+				<field name="content_bg" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_CONTENT_BG_LABEL" default="#27ae60" />
+				<field name="content_border_color" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_CONTENT_BORDER_COLOR_LABEL" default="transparent" />
+				<field name="content_border_width" type="number" label="MOD_DC_FEATUREDBOXES_FIELD_CONTENT_BORDER_WIDTH_LABEL" default="0" filter="integer" min="0" max="20" />
+				<field
+					name="content_center"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_CONTENT_CENTER_LABEL"
+					description="MOD_DC_FEATUREDBOXES_FIELD_CONTENT_CENTER_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<!-- 4 Tytuł -->
+				<field type="spacer" label="MOD_DC_FEATUREDBOXES_GROUP_TITLE" />
+				<field
+					name="show_title"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_SHOW_TITLE_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="title_tag" type="list" label="MOD_DC_FEATUREDBOXES_FIELD_TITLE_TAG_LABEL" default="h3" validate="options">
+					<option value="h1">H1</option>
+					<option value="h2">H2</option>
+					<option value="h3">H3</option>
+					<option value="h4">H4</option>
+					<option value="h5">H5</option>
+					<option value="h6">H6</option>
+				</field>
+				<field name="title_color" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_TITLE_COLOR_LABEL" default="#ffffff" />
+				<field name="title_font_size" type="number" label="MOD_DC_FEATUREDBOXES_FIELD_TITLE_FONT_SIZE_LABEL" default="20" filter="integer" min="12" max="72" />
+
+				<!-- 5 Treść -->
+				<field type="spacer" label="MOD_DC_FEATUREDBOXES_GROUP_TEXT" />
+				<field
+					name="show_text"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_SHOW_TEXT_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="text_color" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_TEXT_COLOR_LABEL" default="#ffffff" />
+				<field name="text_font_size" type="number" label="MOD_DC_FEATUREDBOXES_FIELD_TEXT_FONT_SIZE_LABEL" default="14" filter="integer" min="10" max="32" />
+
+				<!-- 7 Przycisk -->
+				<field type="spacer" label="MOD_DC_FEATUREDBOXES_GROUP_BUTTON" />
+				<field
+					name="show_button"
+					type="radio"
+					label="MOD_DC_FEATUREDBOXES_FIELD_SHOW_BUTTON_LABEL"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="button_color" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_BUTTON_COLOR_LABEL" default="#ffffff" />
+				<field name="button_bg" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_BUTTON_BG_LABEL" default="#27C07C" />
+				<field name="button_font_size" type="number" label="MOD_DC_FEATUREDBOXES_FIELD_BUTTON_FONT_SIZE_LABEL" default="16" filter="integer" min="12" max="24" />
+				<field name="button_color_hover" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_BUTTON_COLOR_HOVER_LABEL" default="#ffffff" />
+				<field name="button_bg_hover" type="color" label="MOD_DC_FEATUREDBOXES_FIELD_BUTTON_BG_HOVER_LABEL" default="#22a86a" />
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" class="form-select" validate="moduleLayout" />
+				<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" rows="3" validate="CssIdentifier" />
+				<field name="cache" type="list" label="COM_MODULES_FIELD_CACHING_LABEL" default="1" filter="integer" validate="options">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="number" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" default="900" filter="integer" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

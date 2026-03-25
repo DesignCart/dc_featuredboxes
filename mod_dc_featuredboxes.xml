@@ -13,6 +13,12 @@
 		<folder>language</folder>
 		<folder>media</folder>
 	</files>
+
+	<updateservers>
+		<server type="extension" name="UPDATE_SERVER">https://www.designcart.pl/download/updates/update_mod_featuredboxes.xml</server>
+	</updateservers>
+
+
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.mod_dc_featuredboxes.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.mod_dc_featuredboxes.sys.ini</language>

@@ -1,10 +1,27 @@
 <?php
 
-/**
- * @package     DC Featured Boxes (mod_dc_featuredboxes)
- * @copyright   Copyright (C) 2026. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- */
+	/**
+     * @package     DC Featuredboxes
+     * @subpackage  Content Plugin
+     * @author      Design Cart
+     * @copyright   Copyright (C) 2025 Design Cart. All rights reserved.
+     * @license     GNU General Public License version 3 or later; see LICENSE.txt
+     *
+     * This file is part of DC Featuredboxes.
+     *
+     * DC Featuredboxes is free software: you can redistribute it and/or modify
+     * it under the terms of the GNU General Public License as published by
+     * the Free Software Foundation, either version 3 of the License, or
+     * (at your option) any later version.
+     *
+     * DC Featuredboxes is distributed in the hope that it will be useful,
+     * but WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+     * GNU General Public License for more details.
+     *
+     * You should have received a copy of the GNU General Public License
+     * along with DC Featuredboxes. If not, see <https://www.gnu.org/licenses/>.
+    */
 
 defined('_JEXEC') or die;
 

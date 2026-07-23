@@ -172,3 +172,4 @@
 </ul>
 <h2>🛒 Developed by Design Cart</h2>
 <p>DC FeaturedBoxes is developed with performance, structure, and modern design standards in mind.</p>
+<p>👨‍💻 author: <a href="https://www.designcart.pl/pawel-nosko.html">Paweł Nosko</a></p>
